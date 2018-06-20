@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RomanNumeralController {
 
     @RequestMapping(value = "/roman/{number}", method = RequestMethod.GET)
-    public String translate(@PathVariable("number") Long number) throws OutOfRangeException{
+    public String translate(@PathVariable("number") Integer number) throws OutOfRangeException{
         return RomanNumeralTranslator.translate(number);
     }
 
