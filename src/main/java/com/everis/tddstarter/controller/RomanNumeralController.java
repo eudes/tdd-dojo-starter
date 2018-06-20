@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RomanNumeralController {
 
-    @RequestMapping(value = "/roman/{number}", method = RequestMethod.POST)
+    @RequestMapping(value = "/roman/{number}", method = RequestMethod.GET)
     public String translate(@PathVariable("number") Long number) {
         return RomanNumeralTranslator.translate(number);
     }
