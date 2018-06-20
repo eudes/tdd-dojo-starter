@@ -12,21 +12,22 @@ public class RomanNumeralTranslator {
         }
 
         int modulo = number % BASE;
-        int fives = number / BASE;
+        int baseTimes = number / BASE;
         int tens = number / (BASE * 2);
 
-        return repeatNumeral("X", tens) + buildUnits(modulo, fives);
+        return repeatNumeral("X", tens) + buildUnits(modulo, baseTimes);
     }
 
     /**
-     * Build the units for the numeral ()
+     * Build the units for the numeral, from 0 to BASE.
+     * 
      */
-    private static String buildUnits(int modulo, int fives){
+    private static String buildUnits(int modulo, int baseTimes){
         String numeral = "";
         String nextNumeral = "V";
 
-        // fives is not multiple of ten
-        if( fives % 2 != 0 ){
+        // even number of bases
+        if( baseTimes % 2 != 0 ){
             numeral = "V";
             nextNumeral = "X";
         }
