@@ -13,7 +13,6 @@ public class RomanNumeralTranslatorTest {
 
 	@Test
 	public void testTranslate() {
-
 		assertEquals("1 should translate to I", "I", RomanNumeralTranslator.translate(1));
 		assertEquals("2 should translate to II", "II", RomanNumeralTranslator.translate(2));
 		assertEquals("3 should translate to III", "III", RomanNumeralTranslator.translate(3));
@@ -34,7 +33,21 @@ public class RomanNumeralTranslatorTest {
 		assertEquals("31 should translate to XXXI", "XXXI", RomanNumeralTranslator.translate(31));
 		assertEquals("34 should translate to XXXIV", "XXXIV", RomanNumeralTranslator.translate(34));
 		assertEquals("35 should translate to XXXV", "XXXV", RomanNumeralTranslator.translate(35));
+	}
 
+	@Test
+	public void test100(){
+		assertEquals("1000 should translate to X", "M", RomanNumeralTranslator.translate(1000));
+		assertEquals("49 should translate to X", "XLIX", RomanNumeralTranslator.translate(49));
+		assertEquals("10 should translate to X", "X", RomanNumeralTranslator.translate(10));
+		assertEquals("50 should translate to X", "L", RomanNumeralTranslator.translate(50));
+		assertEquals("100 should translate to X", "C", RomanNumeralTranslator.translate(100));
+
+		assertEquals("3999 should translate to X", "MMMCMXCIX", RomanNumeralTranslator.translate(3999));
+	}
+
+	@Test
+	public void testExceptions(){
 		try{
 			RomanNumeralTranslator.translate(0);
 			fail("0 should throw");
@@ -44,14 +57,12 @@ public class RomanNumeralTranslatorTest {
 		}
 
 		try{
-			RomanNumeralTranslator.translate(36);
-			fail("36 should throw");
+			RomanNumeralTranslator.translate(4000);
+			fail("4000 should throw");
 		} catch (OutOfRangeException e){
 			boolean isOutOfRangeException = e instanceof OutOfRangeException;
 			assertTrue("Exception should be OutOfRangeException", isOutOfRangeException);
 		}
-		
-
 	}
 
 }
