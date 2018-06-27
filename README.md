@@ -2,10 +2,10 @@
 Sample project for the Everis TDD Dojo
 
 ## The Kata
-Build a Roman Numeral translator, for numbers between 1 and 39. It should receive number like 5 and return a Roman numeral like "V".
+Build a Roman Numeral translator, for numbers between 1 and 39. It should receive a number like 5 and return a Roman numeral like "V".
 
 ## Extra points
-Extend the range form 1 to 3999.
+Extend the range from 1 to 3999.
 
 ## Methodology
 Test Driven Development:
